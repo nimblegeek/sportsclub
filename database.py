@@ -23,9 +23,24 @@ def init_db():
             id SERIAL PRIMARY KEY,
             name VARCHAR(100) NOT NULL,
             sport VARCHAR(50) NOT NULL,
-            description TEXT
+            description TEXT,
+            organizational_number VARCHAR(20)
         )
     ''')
     conn.commit()
     cur.close()
     close_db_connection(conn)
+
+def add_organizational_number_column():
+    conn = get_db_connection()
+    cur = conn.cursor()
+    cur.execute('''
+        ALTER TABLE clubs
+        ADD COLUMN IF NOT EXISTS organizational_number VARCHAR(20)
+    ''')
+    conn.commit()
+    cur.close()
+    close_db_connection(conn)
+
+# Call this function to add the new column
+add_organizational_number_column()
