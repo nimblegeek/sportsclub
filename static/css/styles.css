@@ -12,3 +12,28 @@ body {
 main {
     flex: 1;
 }
+
+/* Aside menu styles */
+aside {
+    height: calc(100vh - 4rem); /* Subtract header height */
+    position: sticky;
+    top: 4rem; /* Header height */
+}
+
+/* Responsive grid */
+@media (max-width: 768px) {
+    .flex {
+        flex-direction: column;
+    }
+    
+    aside {
+        width: 100%;
+        height: auto;
+        position: static;
+        margin-bottom: 1rem;
+    }
+    
+    .flex-1 {
+        margin-left: 0;
+    }
+}

@@ -1,14 +1,21 @@
 {% extends "base.html" %}
 
 {% block content %}
-<div class="mb-8">
-    <input type="text" id="search-input" placeholder="Search clubs..." class="w-full p-2 border rounded">
-</div>
+<div class="flex">
+    <aside class="w-64 bg-gray-200 p-4">
+        <h2 class="text-xl font-semibold mb-4">Menu</h2>
+        <button id="open-modal-btn" class="bg-green-500 text-white px-4 py-2 rounded w-full mb-4">Add New Club</button>
+    </aside>
 
-<button id="open-modal-btn" class="bg-green-500 text-white px-4 py-2 rounded mb-4">Add New Club</button>
+    <div class="flex-1 ml-4">
+        <div class="mb-8">
+            <input type="text" id="search-input" placeholder="Search clubs..." class="w-full p-2 border rounded">
+        </div>
 
-<div id="clubs-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-    <!-- Clubs will be dynamically inserted here -->
+        <div id="clubs-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            <!-- Clubs will be dynamically inserted here -->
+        </div>
+    </div>
 </div>
 
 <!-- Add/Edit Club Modal -->
